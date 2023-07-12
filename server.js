@@ -5,8 +5,8 @@ const PORT =4500;
 const v = require('./Verif');
 const { log } = require('console');
 
-app.get('/' ,(req,res)=>{
-    fs.readFile('./NavbarHome.html',v,'utf8',(err,data)=>{
+app.get('/' ,v,(req,res)=>{
+    fs.readFile('./NavbarHome.html','utf8',(err,data)=>{
         err ? res.send('file not found')&& console.error(err) : res.send(data)
     })
 })
